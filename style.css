@@ -1,0 +1,455 @@
+/* === Variabel Warna & Reset Dasar === */
+:root {
+    --bg-cream: #EFECE3;
+    --bg-blue-light: #8FABD4;
+    --bg-blue-dark: #4A70A9;
+    --text-dark: #2c3e50;
+    --btn-bg: #e6e6e6;
+    --card-bg: #d1d9e6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navigasi mulus */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--text-dark);
+    background-color: var(--bg-blue-light);
+}
+
+/* === Navigasi === */
+nav {
+    background-color: var(--bg-cream);
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 40px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--bg-blue-dark);
+}
+
+.description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    font-style: italic;
+    color: var(--text-color);
+    opacity: 0.9;
+    max-width: 550px; /* Sedikit lebih lebar agar aliran teks enak dibaca */
+    margin-bottom: 35px;
+    border-left: 3px solid #4A70A9; /* Garis aksen tipis di sebelah kiri teks */
+    padding-left: 20px;
+}
+
+/* === Section Home (Hero) === */
+#home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 10%;
+    min-height: 100vh; /* Ubah baris ini menjadi 100vh */
+}
+
+.hero-text {
+    max-width: 60%;
+}
+
+.hero-text h1 {
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.hero-text h1 span {
+    color: #4a69bd;
+    font-weight: 600;
+}
+
+.hero-text h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+.hero-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #000000;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.hero-buttons a {
+    padding: 10px 20px;
+    background-color: var(--btn-bg);
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.btn-primary, .btn-secondary {
+    display: inline-block !important;
+    padding: 12px 30px !important;
+    border-radius: 50px !important; 
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    background-color: #EFECE3 !important;
+    color: #333 !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    cursor: pointer !important;
+    border: none !important;
+}
+
+/* --- EFEK MENGECIL (ZOOM OUT) SAAT DISENTUH --- */
+
+.btn-primary:hover, .btn-secondary:hover {
+    transform: scale(0.9) !important; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
+    filter: brightness(0.95) !important;
+}
+
+.hero-buttons a:hover {
+    background-color: #d4d4d4;
+}
+
+.hero-image-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.hero-img {
+    width: 300px; 
+    height: 300px;
+    object-fit: cover; 
+    border-radius: 50%; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    border: 5px solid #EFECE3;
+    transition: transform 0.4s ease;
+}
+
+.hero-img:hover {
+    transform: scale(1.05);
+}
+
+.hero-social {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.hero-social a {
+    color: var(--bg-blue-dark);
+    font-size: 24px;
+    transition: transform 0.3s;
+}
+
+.hero-social a:hover {
+    transform: scale(1.1);
+}
+
+/* === Section Skill === */
+#skill {
+    background-color: var(--bg-blue-dark);
+    padding: 60px 10%;
+    text-align: center;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#skill h2 {
+    margin-bottom: 40px;
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+.skill-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Flexbox agar ikon otomatis turun jika layar sempit */
+}
+
+/* Styling Ikon + Teks Skill */
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+    cursor: pointer;
+    
+    /* Efek Grayscale di awal */
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: filter 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+}
+
+.skill-item i {
+    font-size: 50px;
+}
+
+.skill-item i {
+    font-size: 50px;
+}
+
+.skill-item img {
+    width: 50px; 
+    height: 50px;
+    object-fit: contain;
+}
+
+/* Container Utama Skill */
+#skills {
+    background-color: #5D7DAA; 
+    padding: 80px 0;
+    text-align: center;
+    color: white;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 60px;
+}
+
+.skill-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px; 
+    flex-wrap: wrap;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; 
+    cursor: pointer;
+    width: 100px;
+}
+
+.skill-item img {
+    width: 70px;
+    height: auto;
+    filter: brightness(0) invert(1); 
+    transition: transform 0.4s ease, filter 0.4s ease;
+    z-index: 2;
+}
+
+/* Teks Nama Software (Sembunyi secara default) */
+.skill-name {
+    position: absolute; 
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px); 
+    font-size: 20px;
+    font-weight: 600;
+    color: #EFECE3;
+    white-space: nowrap;
+    opacity: 0;
+    transition: all 0.4s ease;
+    pointer-events: none;
+}
+
+/* --- LOGIKA HOVER --- */
+
+.skill-item:hover img {
+    transform: scale(1.2);
+    filter: brightness(1) invert(0);
+}
+
+.skill-item:hover .skill-name {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Ukuran Teks Nama Software */
+.skill-item span {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Efek saat Kursor Menyentuh (Hover) */
+.skill-item:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* === Section Project === */
+
+#project {
+    padding: 60px 10%;
+    background-color: var(--bg-blue-light);
+    min-height: 100vh;
+}
+
+#project h2 {
+    text-align: center; /* Memastikan tulisan PROJECT di tengah */
+    margin-bottom: 50px;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    color: var(--text-dark);
+    }
+/* Container Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Ukuran kolom lebih kecil */
+    gap: 25px;
+    max-width: 1100px; /* Membatasi lebar agar tidak terlalu melebar di layar besar */
+    margin: 0 auto; /* Menengah kan seluruh grid */
+}
+
+/* Mengatur ukuran Kartu agar tidak terlalu besar */
+.project-card {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 400px; /* Mengecilkan tinggi minimal kartu */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* Ukuran area gambar diperkecil sedikit */
+.project-img-placeholder {
+    width: 100%;
+    height: 180px; /* Ukuran gambar lebih proporsional */
+    background-color: #cbd5e1;
+}
+
+/* Mengatur teks di dalam kartu agar rapi kebawah */
+.project-info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Membuat tombol selalu di bawah */
+    align-items: center;
+    text-align: center;
+}
+
+.project-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.project-info p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+/* Tombol Lihat di GitHub */
+.btn-project {
+    padding: 10px 20px;
+    background-color: var(--bg-cream);
+    color: var(--text-dark);
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+}
+
+.btn-project:hover {
+    transform: scale(0.9); /* Efek mengecil sesuai keinginanmu */
+}
+
+/* === Footer === */
+footer {
+    background-color: var(--bg-cream);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-size: 14px;
+}
+
+.footer-separator {
+    width: 1px;
+    height: 20px;
+    background-color: #999;
+    margin: 0 10px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social a {
+    color: var(--bg-blue-dark);
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.footer-social a:hover {
+    color: #333;
+}
+
+/* === Responsiveness Dasar === */
+@media (max-width: 850px) {
+    #home {
+        flex-direction: column;
+        text-align: center;
+        gap: 50px;
+    }
+    .hero-text {
+        max-width: 100%;
+    }
+    .hero-buttons {
+        justify-content: center;
+    }
+}
+
+.project-info a {
+    display: block;
+    margin-top: 10px;
+}
+
+.play-btn {
+    background-color: #4A70A9;
+    color: white;
+}
