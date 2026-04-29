@@ -79,6 +79,12 @@ nav ul li a:hover {
     max-width: 60%;
 }
 
+.hero-img {
+    width: 200px;
+    height: 200px;
+    background: red;
+}
+
 .hero-text h1 {
     font-size: 20px;
     font-weight: normal;
