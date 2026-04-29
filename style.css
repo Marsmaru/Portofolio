@@ -79,11 +79,6 @@ nav ul li a:hover {
     max-width: 60%;
 }
 
-.hero-img {
-    width: 200px;
-    height: 200px;
-    background: red;
-}
 
 .hero-text h1 {
     font-size: 20px;
@@ -157,13 +152,9 @@ nav ul li a:hover {
 }
 
 .hero-img {
-    width: 300px; 
+    width: 300px;
     height: 300px;
-    object-fit: cover; 
-    border-radius: 50%; 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    border: 5px solid #EFECE3;
-    transition: transform 0.4s ease;
+    background: red;
 }
 
 .hero-img:hover {
