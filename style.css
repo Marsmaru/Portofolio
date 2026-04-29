@@ -157,6 +157,9 @@ nav ul li a:hover {
     background: red;
 }
 
+.hero-img {
+    border: 5px solid red !important;
+}
 .hero-img:hover {
     transform: scale(1.05);
 }
